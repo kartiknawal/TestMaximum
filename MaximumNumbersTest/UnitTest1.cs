@@ -7,70 +7,28 @@ namespace MaximumNumbersTest
     public class UnitTest1
     {
         [TestMethod]
-        public void Given_MaxNumberAtFirstPosition_Return_SameNumber()
+        public void GivenIntegerArray_Should_Return_LargestInteger()
         {
-            MaximumNumber maximumValue = new MaximumNumber();
-            int maximumInteger = maximumValue.GetMaximumInteger(20, 8, 14);
-            Assert.AreEqual(20, maximumInteger);
+            int[] values = { 89, 8, 99, 18, 2 };
+            MaximumNumber<int> maximumNumber = new MaximumNumber<int>(values);
+            int max = maximumNumber.GetMaximumValue();
+            Assert.AreEqual(99, max);
         }
         [TestMethod]
-        public void Given_MaxNumberAtSecondPosition_Return_SameNumber()
+        public void GivenFloatArray_Should_Return_LargestFloat()
         {
-            MaximumNumber maximumValue = new MaximumNumber();
-            int maximumInteger = maximumValue.GetMaximumInteger(59, 88, 21);
-            Assert.AreEqual(88, maximumInteger);
+            double[] values = { 0.77, 0.6, 1.3, 32.233, 3.122 };
+            MaximumNumber<double> maximumNumber = new MaximumNumber<double>(values);
+            double max = maximumNumber.GetMaximumValue();
+            Assert.AreEqual(32.233, max);
         }
         [TestMethod]
-        public void Given_MaxNumberAtThirdPosition_Return_SameNumber()
+        public void GivenStringArray_Should_Return_LargestString()
         {
-            MaximumNumber maximumValue = new MaximumNumber();
-            int maximumInteger = maximumValue.GetMaximumInteger(8, 52, 79);
-            Assert.AreEqual(79, maximumInteger);
-        }
-
-        [TestMethod]
-        public void Given_MaxFloatAtFirstPosition_Return_SameFloat()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            double maximumDouble = maximumValue.GetMaximumFloat(18.88, 9.0, 15.87);
-            Assert.AreEqual(18.88, maximumDouble);
-        }
-        [TestMethod]
-        public void Given_MaxFloatAtSecondPosition_Return_SameFloat()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            double maximumDouble = maximumValue.GetMaximumFloat(18.88, 99.0, 15.87);
-            Assert.AreEqual(99.0, maximumDouble);
-        }
-
-        [TestMethod]
-        public void Given_MaxFloatAtThirdPosition_Return_SameFloat()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            double maximumDouble = maximumValue.GetMaximumFloat(18.88, 9.0, 86.87);
-            Assert.AreEqual(86.87, maximumDouble);
-        }
-
-        [TestMethod]
-        public void Given_MaxStringAtFirstPosition_Return_SameString()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            string maximumString = maximumValue.GetMaximumString("Lion", "Cat", "Dog");
-            Assert.AreEqual("Lion", maximumString);
-        }
-        [TestMethod]
-        public void Given_MaxStringAtSecondPosition_Return_SameString()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            string maximumString = maximumValue.GetMaximumString("Cat", "Lion", "Dog");
-            Assert.AreEqual("Lion", maximumString);
-        }
-        [TestMethod]
-        public void Given_MaxStringAtThirdPosition_Return_SameString()
-        {
-            MaximumNumber maximumValue = new MaximumNumber();
-            string maximumString = maximumValue.GetMaximumString("Cat", "Dog", "Lion");
-            Assert.AreEqual("Lion", maximumString);
+            string[] values = { "lion", "cat", "dog", "elephant", "rat" };
+            MaximumNumber<string> maximumNumber = new MaximumNumber<string>(values);
+            string max = maximumNumber.GetMaximumValue();
+            Assert.AreEqual("rat", max);
         }
     }
 }

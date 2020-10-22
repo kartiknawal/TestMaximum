@@ -6,28 +6,36 @@ namespace TestMaximumProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome!");
-            Console.WriteLine("Enter 3 integers");
-            int firstInteger = Convert.ToInt32(Console.ReadLine());
-            int secondInteger = Convert.ToInt32(Console.ReadLine());
-            int thirdInteger = Convert.ToInt32(Console.ReadLine());
-            MaximumNumber maximumValue = new MaximumNumber();
-            int maximumNumber = maximumValue.GetMaximumInteger(firstInteger, secondInteger, thirdInteger);
-            Console.WriteLine("The maximum Integer is: " + maximumNumber);
+            string[] values;
+            int[] integerValues = new int[100];
+            Console.WriteLine("Enter integers seperated by comma");
+            values = Console.ReadLine().Split(",");
+            for (int i = 0; i < values.Length; i++)
+            {
+                integerValues[i] = Convert.ToInt32(values[i]);
+            }
+            MaximumNumber<int> maximumInt = new MaximumNumber<int>(integerValues);
+            int maxIntNumber = maximumInt.GetMaximumValue();
+            Console.WriteLine("Maximum :" + maxIntNumber);
 
-            Console.WriteLine("Enter 3 decimal values");
-            double firstDouble = Convert.ToDouble(Console.ReadLine());
-            double secondDouble = Convert.ToDouble(Console.ReadLine());
-            double thirdDouble = Convert.ToDouble(Console.ReadLine());
-            double maximumDouble = maximumValue.GetMaximumFloat(firstDouble, secondDouble, thirdDouble);
-            Console.WriteLine("The maximim Float Value is: " + maximumDouble);
+            double[] doubleValues = new double[100];
 
-            Console.WriteLine("Enter 3 strings");
-            string firstString = Console.ReadLine();
-            string secondString = Console.ReadLine();
-            string thirdString = Console.ReadLine();
-            string maximumString = maximumValue.GetMaximumString(firstString, secondString, thirdString);
-            Console.WriteLine("Maximum String: " + maximumString);
+            Console.WriteLine("Enter decimal numbers seperated by comma");
+            values = Console.ReadLine().Split(",");
+            for (int i = 0; i < values.Length; i++)
+            {
+                doubleValues[i] = Convert.ToDouble(values[i]);
+            }
+            MaximumNumber<double> maximumDouble = new MaximumNumber<double>(doubleValues);
+            double maxDoubleNumber = maximumDouble.GetMaximumValue();
+            Console.WriteLine("Maximum :" + maxDoubleNumber);
+
+            Console.WriteLine("Enter strings seperated by comma");
+            values = Console.ReadLine().Split(",");
+            MaximumNumber<string> maximumString = new MaximumNumber<string>(values);
+            string maxString = maximumString.GetMaximumValue();
+            Console.WriteLine("Maximum :" + maxString);
         }
     }
+
 }
