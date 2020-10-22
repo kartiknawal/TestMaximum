@@ -16,5 +16,10 @@ namespace TestMaximumProgram
             Array.Sort(values);
             return values[values.Length - 1];
         }
+
+        public void DisplayMaximumNumber()
+        {
+            Console.WriteLine("Maximum Value is: " + GetMaximumValue());
+        }
     }
 }

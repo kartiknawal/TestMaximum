@@ -15,11 +15,10 @@ namespace TestMaximumProgram
                 integerValues[i] = Convert.ToInt32(values[i]);
             }
             MaximumNumber<int> maximumInt = new MaximumNumber<int>(integerValues);
-            int maxIntNumber = maximumInt.GetMaximumValue();
-            Console.WriteLine("Maximum :" + maxIntNumber);
+            maximumInt.DisplayMaximumNumber();
+
 
             double[] doubleValues = new double[100];
-
             Console.WriteLine("Enter decimal numbers seperated by comma");
             values = Console.ReadLine().Split(",");
             for (int i = 0; i < values.Length; i++)
@@ -27,14 +26,14 @@ namespace TestMaximumProgram
                 doubleValues[i] = Convert.ToDouble(values[i]);
             }
             MaximumNumber<double> maximumDouble = new MaximumNumber<double>(doubleValues);
-            double maxDoubleNumber = maximumDouble.GetMaximumValue();
-            Console.WriteLine("Maximum :" + maxDoubleNumber);
+            maximumDouble.DisplayMaximumNumber();
 
-            Console.WriteLine("Enter strings seperated by comma");
+
+            Console.WriteLine("Enter Strings seperated by comma");
             values = Console.ReadLine().Split(",");
             MaximumNumber<string> maximumString = new MaximumNumber<string>(values);
             string maxString = maximumString.GetMaximumValue();
-            Console.WriteLine("Maximum :" + maxString);
+            maximumString.DisplayMaximumNumber();
         }
     }
 
