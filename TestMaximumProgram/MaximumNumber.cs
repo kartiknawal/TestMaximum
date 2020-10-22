@@ -27,5 +27,16 @@ namespace TestMaximumProgram
                 return thirdDouble;
             throw new Exception("Numbers are same. Please enter different numbers");
         }
+
+        public string GetMaximumString(string firstString, string secondString, string thirdString)
+        {
+            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0 || firstString.CompareTo(secondString) >= 0 && firstString.CompareTo(thirdString) > 0 || firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) >= 0)
+                return firstString;
+            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0 || secondString.CompareTo(firstString) >= 0 && secondString.CompareTo(thirdString) > 0 || secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) >= 0)
+                return secondString;
+            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0 || thirdString.CompareTo(firstString) >= 0 && thirdString.CompareTo(secondString) > 0 || thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) >= 0)
+                return thirdString;
+            throw new Exception("All three strings are equal");
+        }
     }
 }

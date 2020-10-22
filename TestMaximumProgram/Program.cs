@@ -21,6 +21,13 @@ namespace TestMaximumProgram
             double thirdDouble = Convert.ToDouble(Console.ReadLine());
             double maximumDouble = maximumValue.GetMaximumFloat(firstDouble, secondDouble, thirdDouble);
             Console.WriteLine("The maximim Float Value is: " + maximumDouble);
+
+            Console.WriteLine("Enter 3 strings");
+            string firstString = Console.ReadLine();
+            string secondString = Console.ReadLine();
+            string thirdString = Console.ReadLine();
+            string maximumString = maximumValue.GetMaximumString(firstString, secondString, thirdString);
+            Console.WriteLine("Maximum String: " + maximumString);
         }
     }
 }

@@ -50,5 +50,27 @@ namespace MaximumNumbersTest
             double maximumDouble = maximumValue.GetMaximumFloat(18.88, 9.0, 86.87);
             Assert.AreEqual(86.87, maximumDouble);
         }
+
+        [TestMethod]
+        public void Given_MaxStringAtFirstPosition_Return_SameString()
+        {
+            MaximumNumber maximumValue = new MaximumNumber();
+            string maximumString = maximumValue.GetMaximumString("Lion", "Cat", "Dog");
+            Assert.AreEqual("Lion", maximumString);
+        }
+        [TestMethod]
+        public void Given_MaxStringAtSecondPosition_Return_SameString()
+        {
+            MaximumNumber maximumValue = new MaximumNumber();
+            string maximumString = maximumValue.GetMaximumString("Cat", "Lion", "Dog");
+            Assert.AreEqual("Lion", maximumString);
+        }
+        [TestMethod]
+        public void Given_MaxStringAtThirdPosition_Return_SameString()
+        {
+            MaximumNumber maximumValue = new MaximumNumber();
+            string maximumString = maximumValue.GetMaximumString("Cat", "Dog", "Lion");
+            Assert.AreEqual("Lion", maximumString);
+        }
     }
 }
